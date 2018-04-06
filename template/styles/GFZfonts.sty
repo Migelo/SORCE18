@@ -1,0 +1,116 @@
+% Set fonts.
+
+\newcommand{\GFZtiny}{\tiny}
+\newcommand{\GFZscriptsize}{\tiny}
+\newcommand{\GFZfootnotesize}{\scriptsize}
+\newcommand{\GFZsmall}{\footnotesize}
+\newcommand{\GFZnormalsize}{\small}
+\newcommand{\GFZlarge}{\normalsize}
+\newcommand{\GFZLarge}{\large}
+%\newcommand{\GFZLarge}{\fontsize{20}{0}}
+
+\mode<presentation>
+
+\setbeamerfont{normal text}{} % ignored currently
+\setbeamerfont{alerted text}{}
+\setbeamerfont{example text}{}
+
+\setbeamerfont{structure}{}
+\setbeamerfont{tiny structure}{size=\GFZtiny, series=\normalfont}
+
+\setbeamerfont{title}{size=\GFZLarge, parent=structure}
+\setbeamerfont{title in head/foot}{size=\GFZtiny}
+\setbeamerfont{title in sidebar}{size=\GFZtiny}
+
+\setbeamerfont{subtitle}{size=\GFZnormalsize, parent=title}
+
+\setbeamerfont{author}{}
+\setbeamerfont{author in head/foot}{}
+\setbeamerfont{author in sidebar}{size=\GFZtiny}
+
+\setbeamerfont{institute}{size=\GFZscriptsize}
+\setbeamerfont{institute in head/foot}{}
+\setbeamerfont{institute in sidebar}{}
+
+\setbeamerfont{date}{}
+\setbeamerfont{date in head/foot}{}
+\setbeamerfont{date in sidebar}{}
+
+\setbeamerfont{part name}{size=\GFZLarge}
+\setbeamerfont{part title}{parent=title}
+
+\setbeamerfont{section in toc}{parent=structure}
+\setbeamerfont{section in toc shaded}{parent=section in toc}
+\setbeamerfont{section in head/foot}{}
+\setbeamerfont{section in sidebar}{size=\GFZtiny}
+\setbeamerfont{section number projected}{size=\GFZsmall, parent={section in toc,projected text}}
+
+\setbeamerfont{subsection in toc}{}
+\setbeamerfont{subsection in toc shaded}{parent=subsection in toc}
+\setbeamerfont{subsection in head/foot}{}
+\setbeamerfont{subsection in sidebar}{}
+
+\setbeamerfont{subsubsection in toc}{size=\GFZfootnotesize}
+\setbeamerfont{subsubsection in toc shaded}{parent=subsubsection in toc}
+\setbeamerfont{subsubsection in head/foot}{}
+\setbeamerfont{subsubsection in sidebar}{}
+
+\setbeamerfont{headline}{parent={tiny structure}}
+\setbeamerfont{footline}{parent={tiny structure}}
+
+\setbeamerfont{sidebar}{size=\GFZtiny, parent={tiny structure}}
+\setbeamerfont{sidebar left}{parent=sidebar}
+\setbeamerfont{sidebar right}{parent=sidebar}
+
+\setbeamerfont{frametitle}{parent=structure, size=\GFZLarge}
+\setbeamerfont{framesubtitle}{parent=frametitle, size=\GFZfootnotesize}
+
+\setbeamerfont{caption}{size=\GFZtiny}
+\setbeamerfont{caption name}{parent={structure,caption}}
+
+\setbeamerfont{button}{size=\GFZtiny}
+
+\setbeamerfont{block body}{}
+\setbeamerfont{block body alerted}{}
+\setbeamerfont{block body example}{}
+\setbeamerfont{block title}{size=\GFZlarge,parent={structure,block body}}
+\setbeamerfont{block title alerted}{parent={block title,alerted text}}
+\setbeamerfont{block title example}{parent={block title,example text}}
+
+\setbeamerfont{item}{parent=structure}
+\setbeamerfont{subitem}{parent=item}
+\setbeamerfont{subsubitem}{parent=subitem}
+
+\setbeamerfont{item projected}{size=\GFZtiny, parent={item,projected text}}
+\setbeamerfont{subitem projected}{parent=item projected}
+\setbeamerfont{subsubitem projected}{parent=subitem projected}
+
+\setbeamerfont{itemize item}{parent=item}
+\setbeamerfont{itemize subitem}{parent=subitem}
+\setbeamerfont{itemize subsubitem}{parent=subsubitem}
+
+\setbeamerfont{enumerate item}{parent=item}
+\setbeamerfont{enumerate subitem}{parent=subitem}
+\setbeamerfont{enumerate subsubitem}{parent=subsubitem}
+
+\setbeamerfont{itemize/enumerate body}{}
+\setbeamerfont{itemize/enumerate subbody}{size=\GFZsmall}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\GFZfootnotesize}
+
+
+\setbeamerfont{description item}{parent=item}
+
+\setbeamerfont{projected text}{parent={tiny structure}}
+
+\setbeamerfont{abstract}{size=\GFZsmall}
+\setbeamerfont{abstract title}{parent={abstract,structure},size=\GFZnormalsize}
+
+\setbeamerfont{verse}{family=\rmfamily,shape=\itshape}
+
+\setbeamerfont{quotation}{shape=\itshape}
+\setbeamerfont{quote}{parent=quotation}
+
+\setbeamerfont{note page}{size=\GFZsmall}
+
+\mode
+<all>

@@ -1,0 +1,91 @@
+\documentclass[8pt, xcolor=dvipsnames, aspectratio=43]{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multimedia}
+\usepackage{bera}
+\usepackage{url}
+\usepackage{gensymb}
+\usepackage{cancel}
+\usepackage{relsize}
+\usepackage{romannum}
+\usepackage{marvosym}
+\usepackage{svg}
+\usepackage{import}
+\usepackage{multimedia}
+\usepackage{bera}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{amsmath} % or simply amstext
+\usepackage{siunitx}
+
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes}
+
+\usepackage{./template/styles/GFZtheme}
+\usepackage{./template/styles/GFZcolors}
+\usepackage{./template/styles/GFZfonts}
+
+\newcommand{\GFZlogo}{\includegraphics[height=10px, keepaspectratio=true, viewport=0 0 480 326]{template/logos/mpg_logo_bw}}
+\newcommand{\GFZmark}{\includegraphics[height=15px, keepaspectratio=true, viewport=0 0 480 326]{template/logos/mps_logo_bw}}
+\newcommand{\angstrom}{\textup{\AA}}
+
+%\setbeamertemplate{note page}[plain]
+%\setbeameroption{show only notes}
+%\setbeameroption{show notes}
+%\setbeameroption{show notes on second screen}
+
+\title[OODF]{OODF: Optimized Opacity Distribution Functions for a New Generation of Solar and Stellar Brightness Variability Models}
+\author[Miha Cernetic]{Miha Cernetic, Veronika Witzke, Alexander I. Shapiro, Natalia A. Krivova, Sami K. Solanki, Rinat V. Tagoirov}
+\date[Mar. 22, '18]{Mar. 22, '18}
+\logo{
+\begin{columns}
+ \begin{column}{0.33\textwidth}
+  \begin{center}
+   \includegraphics[width=.75\textwidth]{./template/logos/mpg_logo_color}  
+  \end{center}  
+ \end{column}
+ \begin{column}{0.33\textwidth}
+  \begin{center}
+   \includegraphics[width=.75\textwidth]{./template/logos/partner-logo2}
+  \end{center}
+ \end{column}
+ \begin{column}{0.33\textwidth}
+  \begin{center}
+   \includegraphics[width=1.\textwidth]{./template/logos/partner-logo1}
+  \end{center}
+ \end{column}
+\end{columns}}
+\institute[MPS]{
+  Max Planck Institute for Solar System Research\\
+  SOLVe group\\
+  \Letter cernetic@mps.mpg.de
+}
+\renewcommand{\baselinestretch}{1.1}
+
+
+\begin{document}
+{
+%\usebackgroundtemplate{\includegraphics[height=100px]{./images/ringCurrent.pdf}}
+%\usebackgroundtemplate{\includegraphics[height=\paperheight]{./images/ringCurrent.pdf}}
+\maketitle
+}
+\logo{}
+
+
+
+%\begin{frame}
+%%...................................................................................................
+%\note<1>[item]{Take notes here.}
+%%...................................................................................................
+%%\tableofcontents
+%\end{frame}
+
+\include{./chapter/Demo}
+\end{document}

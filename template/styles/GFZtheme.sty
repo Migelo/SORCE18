@@ -1,0 +1,63 @@
+% Set beamer theme.
+
+% define subitems for itemize
+\newcommand{\subitem}{\item[-]}
+\newcommand{\subsubitem}{\item}
+
+\mode<presentation>
+
+%\setbeamercovered{dynamic}
+\setbeamercovered{invisible}
+\beamertemplatenavigationsymbolsempty 
+
+% headline
+\setbeamertemplate{headline}[default]
+\defbeamertemplate*{headline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{head/foot}%
+  		\usebeamerfont{section in head/foot}\insertsection\hspace*{.7em}%
+  \end{beamercolorbox}%
+  }
+  \vskip0pt%
+    %\raggedright
+    %\hspace*{2em}%
+    %{\sffamily\Large\color{GFZblue}\thesection.~\insertsection\hfill\insertsubsection}%
+    %\hspace*{2em}%
+}
+
+% content
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=false]
+
+% footline (status line)
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.08\paperwidth,ht=5.25ex,dp=1ex,center]{head/foot}%
+    \GFZlogo
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.16\paperwidth,ht=5.25ex,dp=1ex,center]{head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=5.25ex,dp=1ex,center]{head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.215\paperwidth,ht=5.25ex,dp=1ex,right]{head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate\hspace{3.5em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.13\paperwidth,ht=5.25ex,dp=1ex,right]{head/foot}%
+    \GFZmark
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\mode
+<all>
