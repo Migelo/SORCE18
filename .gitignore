@@ -1,0 +1,10 @@
+*.pyc
+*.log
+*.aux
+*.toc
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.dvi
+*.vrb
