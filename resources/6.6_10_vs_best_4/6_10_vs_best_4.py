@@ -12,7 +12,7 @@ data_2 = np.loadtxt('./odf_spectra9Comparison')
 data_3 = np.loadtxt('./odf_spectra8Comparison')
 data_4 = np.loadtxt('./odf_spectra7Comparison')
 data_5 = np.loadtxt('./odf_spectra6Comparison')
-data_6 = np.loadtxt('./odf_spectra3c5025Comparison')
+data_6 = np.load('../results.npy')
 
 for i in range(2):
     f, ax = plt.subplots(1)
@@ -30,8 +30,8 @@ for i in range(2):
     ax.plot(data_5[:, 0], common.convolve(data_5[:, 2], sigma),
             label='6 uniform sub bins')
     if i > 0:
-        ax.plot(data_6[:, 0], common.convolve(data_6[:, 2], sigma),
-            label='4 nonuniform sub bins', lw=5)
+        ax.plot(np.arange(1000, 9000, 10), common.convolve(data_6[380,:], sigma),
+            label='3 nonuniform sub bins', lw=5)
     ax.axhline(y=1)
 
     ax.set_xlabel(u'Wavelength [$\mathrm{\AA}$]')
