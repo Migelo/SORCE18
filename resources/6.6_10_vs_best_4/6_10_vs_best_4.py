@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.ndimage.filters
 import common
 
 filename = __file__.split("/")[-1]
@@ -30,15 +29,17 @@ for i in range(2):
     ax.plot(data_5[:, 0], common.convolve(data_5[:, 2], sigma),
             label='6 uniform sub bins')
     if i > 0:
-        ax.plot(np.arange(1000, 9000, 10), common.convolve(data_6[380,:], sigma),
-            label='3 nonuniform sub bins', lw=5)
-    ax.axhline(y=1)
+        ax.plot(np.arange(1000, 9000, 10),
+                common.convolve(data_6[380, :], sigma),
+                label='3 nonuniform sub bins', lw=5)
+    ax.axhline(1)
 
     ax.set_xlabel(u'Wavelength [$\mathrm{\AA}$]')
     ax.set_ylabel('Ratio of ODF- to high resolution-spectrum')
-    ax.set_xlim((3800, 8900))
-    ax.set_ylim((.95, 1.005))
+    ax.set_xlim(3800, 8900)
+    ax.set_ylim(.948, 1.005)
 
     ax.legend(loc='best')
 
-    plt.savefig("../../images/{}_{}.{}".format(filename[:-3], i, common.pic_format))
+    plt.savefig("../../images/{}_{}.{}".format(filename[:-3], i,
+                common.pic_format))
