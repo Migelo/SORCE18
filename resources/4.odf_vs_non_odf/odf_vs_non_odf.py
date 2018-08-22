@@ -42,8 +42,8 @@ ax[1].step(sub_bins[:, 0], np.log10(sub_bins[:, 2]), where='post',
 ax[1].step(edges[:-1], np.log10(odf), where='post',
            label='Mean')
 ax[1].set_xlabel(u'Wavelength [$\mathrm{\AA}$]')
-ax[1].set_xlim((4005, 4075))
+ax[1].set_xlim(4005, 4075)
 ax[1].set_ylabel(r'log$_{10}$ Opacity [cm$^{-1}$]')
-ax[1].set_ylim((-8.2, -2.5))
+ax[1].set_ylim(-9.5, -3.)
 
 plt.savefig("../../images/{}.{}".format(filename[:-3], common.pic_format))

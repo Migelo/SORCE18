@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import scipy.ndimage.filters
 
-plt.style.use(['my_dark_background', 'presentation'])
+plt.style.use(['my_dark_background', 'presentation_169'])
 
 # physical constants
 c = 2.99792458e+10

@@ -16,7 +16,7 @@
 \frame[t]
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{TSI varies on timescales from minutes to decades. So what is the main contributor to this variability?}
 %...................................................................................................
 	\frametitle{\alert{T}otal \alert{S}olar \alert{I}rradiance}
 	\begin{itemize}
@@ -24,7 +24,7 @@
 	\end{itemize}
 
 	\centering
-	\includegraphics[width=\textwidth]{images/tsi}
+	\includegraphics[width=130mm]{images/tsi}
 	
 }
 
@@ -32,12 +32,12 @@
 \frame
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{If we look at the solar spectra we see it is full of spectral lines...}
 %...................................................................................................
 	\frametitle{Spectra of the individual components}
 	\centering
-	Solar spectra \\
-	\includegraphics[width=.9\textwidth]{images/solar_spectra}
+	\LARGE Solar spectra \\
+	\includegraphics[width=130mm]{images/solar_spectra}
 	
 }
 
@@ -46,7 +46,7 @@
 \frame[t]
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{Then we can do simulations w/ and w/o lines and get the this result...so we can see the lines really are the main contributor to the TSI variability}
 %...................................................................................................
 	\frametitle{Importance of lines for variability}
 	\begin{itemize}
@@ -60,56 +60,43 @@
 }
 
 
-%\frame[t]
-%{
-%%...................................................................................................
-%\note<1>[]{}
-%%...................................................................................................
-%	\frametitle{Importance of lines for variability}
-%	\vspace{3em}
-%	\centering
-%	\includegraphics[width=90mm]{images/timescales_1}
-%}
-
 \frame[t]
 {
 %...................................................................................................
 \note<1>[]{}
 %...................................................................................................
 	\frametitle{Importance of lines for variability}
-	\vspace{3em}
+	\vspace{2.1em}
 	\centering
-	\includegraphics[width=.9\textwidth]{images/timescales_2}
+	\includegraphics[width=.73\textwidth]{images/timescales_2}
 }
 
 
 \frame[t]
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{...careful and appropriate treatment of spectral lines is necessary for TSI variability calculations.}
 %...................................................................................................
 	\frametitle{Importance of lines for variability}
 	\begin{itemize}
-		\item<2-> \alert{25\%} of the variability comes from molecular lines $\rightarrow$ accurate linelists are required
+		\item \alert{25\%} of the variability comes from molecular lines $\rightarrow$ accurate linelists are required
 	\end{itemize}
 	\centering
-	\includegraphics[width=.9\textwidth]{images/timescales_3}
+	\includegraphics[width=.73\textwidth]{images/timescales_3}
 }
 
 \frame
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{If we want to obtain the emergent spectra from a 3D MHD cube which gives us the structure of the magnetic fields we pierce it with 1k rays and then calculate the emergent spectra from those 1D atmospheres. There are multiple methods how to speedup RT and here is were my work comes in. I will show you my work on ODF and the improvements we have made on them. }
 %...................................................................................................
 	\frametitle{1.5D simulations}
 	\centering
-	\includegraphics[width=115mm]{images/1_5D}
+	\includegraphics[width=150mm]{images/1_5D}
 }
 
 
 
-%\frame
-%{
 %%...................................................................................................
 %\note<1>[item]{The Str\"omgren filters B and Y, as well as the Kepler passband or the COROT filter, are broadly used for observations.
 %
@@ -130,7 +117,7 @@
 	\end{itemize}
 
 	\centering
-	\includegraphics[width=115mm]{images/odf_generation_process_0}
+	\includegraphics[width=130mm]{images/odf_generation_process_0}
 }
 
 \frame
@@ -144,7 +131,7 @@
     \item Integral is preserved by sorting
 	\end{itemize}		
 	\centering
-	\includegraphics[width=108mm]{images/odf_generation_process_1}
+	\includegraphics[width=123mm]{images/odf_generation_process_1}
 }
 
 \frame
@@ -158,7 +145,7 @@
 \end{itemize}		
 
 		\centering
-	\includegraphics[width=115mm]{images/odf_generation_process_2}
+	\includegraphics[width=130mm]{images/odf_generation_process_2}
 }
 
 \frame
@@ -171,7 +158,7 @@
 		\item Approximate the sorted opacity with a step-wise function
 	\end{itemize}
 	\centering
-	\includegraphics[width=115mm]{images/odf_generation_process_3}
+	\includegraphics[width=130mm]{images/odf_generation_process_3}
 }
 \frame
 {
@@ -183,7 +170,7 @@
 	\item Mean is skewed by extreme values
 	\end{itemize}
 	\centering
-	\includegraphics[width=115mm]{images/odf_generation_process_4}
+	\includegraphics[width=130mm]{images/odf_generation_process_4}
 }
 
 \frame
@@ -193,11 +180,11 @@
 %...................................................................................................
 	\frametitle{ODF performance analysis}
 	\begin{itemize}
-	    \item Synthesize spectrum using ODFs from 1000-9000\si{\angstrom} with 10\si{\angstrom} bins
+	    \item Synthesize spectra using ODFs from 1000-9000\si{\angstrom} in 10\si{\angstrom} bins
 	    \item Compare the fluxes from the ODF spectrum with the high resolution spectrum in the bins
 	\end{itemize}
 	\centering
-	\includegraphics[width=111mm]{images/odf_vs_non_odf}
+	\includegraphics[width=120mm]{images/odf_vs_non_odf}
 }
 
 
@@ -236,7 +223,7 @@
 	\end{itemize}
 	
 	\centering
-	\includegraphics[width=115mm]{images/6_10_vs_best_4_0}
+	\includegraphics[width=130mm]{images/6_10_vs_best_4_0}
 }
 \frame
 {
@@ -249,29 +236,29 @@
 		\item The last sub bin is crucial after 5000\si{\angstrom}
     \end{itemize}	  
 	\centering
-	\includegraphics[width=115mm]{images/6_10_vs_best_4_1}
+	\includegraphics[width=120mm]{images/6_10_vs_best_4_1}
 }
-%\frame
-%{
-%%...................................................................................................
-%\note<1>[]{}
-%%...................................................................................................
-%	\frametitle{Comparison of nonuniform sub bins}
-%	\begin{itemize}
-%	    \item Legend specifies sub bin sizes, starting with the first one
-%	    \item Last sub bin is the same for all
-%	\end{itemize}
-%	\centering
-%	\includegraphics[width=111mm]{images/same_last_sub_bin}
-%}
 \frame
 {
 %...................................................................................................
 \note<1>[]{}
 %...................................................................................................
+	\centering	
 	\frametitle{Best sub bin combinations using 4 sub bins}
-	\includegraphics[width=125mm]{images/best_combination_finder_0}
+	\includegraphics[width=140mm]{images/best_combination_finder_0}
 }
+
+\frame
+{
+%...................................................................................................
+\note<1>[]{}
+%...................................................................................................
+	\centering		
+	\frametitle{Best sub bin combinations using 10 sub bins}
+	\includegraphics[width=130mm]{images/best_combination_finder_10_1}
+}
+
+
 \frame
 {
 %...................................................................................................
@@ -284,6 +271,7 @@
 	\centering
 	\includegraphics[width=115mm]{images/optimal_stroemgren_1_c_b}
 }
+
 
 \frame
 {
@@ -330,7 +318,6 @@
 	}
 	\pause
 		\centering \alert{\Large{Thank you for your attention!}} \\
-		\pause
 		\includegraphics[width=25mm]{images/qr}
 }
 

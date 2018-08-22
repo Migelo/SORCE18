@@ -9,3 +9,5 @@
 *.dvi
 *.vrb
 *.tks
+.ownclo*
+resources/sub_bins_10/sub_b*

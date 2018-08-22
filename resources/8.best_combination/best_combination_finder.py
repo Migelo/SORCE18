@@ -117,24 +117,23 @@ for plot_number in range(1):
         ax[0].set_ylabel('Sub bin distribution', fontsize=17)
     if plot_number < 1:
         # middle panel
-        ax[1].set_ylim((.95, 1.05))
-        ax[1].set_xlim((1000, 3600))
+        ax[1].set_ylim(.95, 1.05)
+        ax[1].set_xlim(1000, 3600)
         ax[1].set_ylabel('Ratio')
         ax[1].step(bins[:, 0], [1 - abs(x[1] - 1) for x in best_combination],
                    label='best combination')
         ax[1].step(
             bins[:, 0], kurucz_binned / detailed_spectra_binned,
             label='Kurucz')
-        ax[1].step(bins[:, 0], detailed_spectra_binned / continuum_binned,
-                   label='1/Continuum')
+#        ax[1].step(bins[:, 0], detailed_spectra_binned / continuum_binned,
+#                   label='1/Continuum')
         ax[1].axhline(1)
         # for i, item in enumerate(results[np.argsort(chi2)[:1]]):
         #     ax[1].step(bins[:, 0], item, label=sub_bins[np.argsort(chi2)[i]])
-        ax[1].legend(loc='upper right')
 
         # lower panel
-        ax[2].set_ylim((.98, 1.02))
-        ax[2].set_xlim((4000, 9000))
+        ax[2].set_ylim(.98, 1.02)
+        ax[2].set_xlim(4000, 9000)
         ax[2].set_xlabel(u'Wavelength [$\mathrm{\AA}$]')
         ax[2].set_ylabel('Ratio')
         ax[2].step(bins[:, 0], [1 - abs(x[1] - 1) for x in best_combination],
@@ -142,17 +141,18 @@ for plot_number in range(1):
         ax[2].step(
             bins[:, 0], kurucz_binned / detailed_spectra_binned,
             label='Kurucz')
-        ax[2].step(bins[:, 0], detailed_spectra_binned / continuum_binned,
-                   label='1/Continuum')
+#        ax[2].step(bins[:, 0], detailed_spectra_binned / continuum_binned,
+#                   label='1/Continuum')
         ax[2].axhline(1)
+        ax[2].legend(loc='upper right')
         # for i, item in enumerate(results[np.argsort(chi2)[:1]]):
         #     ax[1].step(bins[:, 0], item, label=sub_bins[np.argsort(chi2)[i]])
 #        ax[2].legend(loc='upper right')
 
     else:
         # lower panel
-        ax[1].set_ylim((.901, 1.1))
-        ax[1].set_xlim((1000, 9000))
+        ax[1].set_ylim(.901, 1.1)
+        ax[1].set_xlim(1000, 9000)
         ax[1].set_xlabel(u'Wavelength [$\mathrm{\AA}$]')
         ax[1].step(bins[:, 0], [1 - abs(x[1] - 1) for x in best_combination],
                    label='best combination')
