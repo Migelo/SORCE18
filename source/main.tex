@@ -1,4 +1,4 @@
-\section{IAU2018}
+\section{IMPRS-MPA}
 
 %\frame
 %{
@@ -13,10 +13,22 @@
 %%	\includegraphics[width=115mm]{images/}
 %}
 
+
+\frame
+{
+%...................................................................................................
+\note<1>[]{}
+%...................................................................................................
+	\frametitle{First project - Introduction}
+	\centering
+    \large{\textbf{OODF: Optimized Opacity Distribution Functions for a New Generation of Solar and Stellar Brightness Variability Models}} \\
+    Miha Cernetic, Alexander I. Shapiro, Veronika Witzke, Natalia A. Krivova, Sami K. Solanki, \\Rinat V. Tagirov
+}
+
 \frame[t]
 {
 %...................................................................................................
-\note<1>[]{TSI varies on timescales from minutes to decades. So what is the main contributor to this variability?}
+\note<1>[]{Total solar irradiance is defined as spectrally integrated solar radiative flux at 1 AU. It is measured in W/m^2. The plot shows that th TSI varies on timescales from minutes to decades. So what is the main contributor to this variability?}
 %...................................................................................................
 	\frametitle{\alert{T}otal \alert{S}olar \alert{I}rradiance}
 	\begin{itemize}
@@ -28,25 +40,33 @@
 	
 }
 
+\frame
+{
+%...................................................................................................
+\note<1>[]{If we want to obtain the emergent spectra from a 3D MHD cube which gives us the structure of the magnetic fields we pierce it with 1k rays and then calculate the emergent spectra from those 1D atmospheres. There are multiple methods how to speedup RT and here is were my work comes in. I will show you my work on ODF and the improvements we have made on them. }
+%...................................................................................................
+	\frametitle{1.5D simulations}
+	\centering
+	\includegraphics[width=150mm]{images/1_5D}
+}
 
 \frame
 {
 %...................................................................................................
-\note<1>[]{If we look at the solar spectra we see it is full of spectral lines...}
+\note<1>[]{If we look at the solar spectra we see that it has very complex structure. It is full of spectral lines.}
 %...................................................................................................
 	\frametitle{Spectra of the individual components}
 	\centering
-	\LARGE Solar spectra \\
+	\LARGE Observed solar spectra \\
 	\includegraphics[width=130mm]{images/solar_spectra}
 	
 }
 
 
-
 \frame[t]
 {
 %...................................................................................................
-\note<1>[]{Then we can do simulations w/ and w/o lines and get the this result...so we can see the lines really are the main contributor to the TSI variability}
+\note<1>[]{So we run simulations of the sun w/ and w/o lines and get the this result. But before we pay attention to the plot, let me explain...so we can see the lines really are the main contributor to the TSI variability}
 %...................................................................................................
 	\frametitle{Importance of lines for variability}
 	\begin{itemize}
@@ -79,21 +99,13 @@
 %...................................................................................................
 	\frametitle{Importance of lines for variability}
 	\begin{itemize}
-		\item \alert{25\%} of the variability comes from molecular lines $\rightarrow$ accurate linelists are required
+		\item \alert{25\%} of the variability comes from molecular lines $\rightarrow$ accurate treatment of lines is crucial
 	\end{itemize}
 	\centering
 	\includegraphics[width=.73\textwidth]{images/timescales_3}
 }
 
-\frame
-{
-%...................................................................................................
-\note<1>[]{If we want to obtain the emergent spectra from a 3D MHD cube which gives us the structure of the magnetic fields we pierce it with 1k rays and then calculate the emergent spectra from those 1D atmospheres. There are multiple methods how to speedup RT and here is were my work comes in. I will show you my work on ODF and the improvements we have made on them. }
-%...................................................................................................
-	\frametitle{1.5D simulations}
-	\centering
-	\includegraphics[width=150mm]{images/1_5D}
-}
+
 
 
 
@@ -109,7 +121,7 @@
 \frame
 {
 %...................................................................................................
-\note<1>[]{}
+\note<1>[]{ODFs are useful for many applications (among them variability calculations) which require a low resolution flux/intensity. I am interested in calculating the  flux from some part of the spectra, which I will call the bin}
 %...................................................................................................
 	\frametitle{Generating ODFs}
 	\begin{itemize}
@@ -180,7 +192,7 @@
 %...................................................................................................
 	\frametitle{ODF performance analysis}
 	\begin{itemize}
-	    \item Synthesize spectra using ODFs from 1000-9000\si{\angstrom} in 10\si{\angstrom} bins
+	    \item Synthesize spectra with \textbf{NESSY} radiative transfer code using ODFs from 1000-9000\si{\angstrom} in 10\si{\angstrom} bins
 	    \item Compare the fluxes from the ODF spectrum with the high resolution spectrum in the bins
 	\end{itemize}
 	\centering
@@ -194,18 +206,18 @@
 \note<1>[]{}
 %...................................................................................................
 	\frametitle{Possible solutions}
-	Number of calculations goes as: \large{$n_{bins} \times n_{sub bins}$ }
-	\vspace{1.6em}
+	\large{Number of calculations $\mathrm{n_{cal} = n_{bins} \times n_{sub bins}}$}
+	\vspace{4em}
 	
 	\centering
 	
 \begin{tikzpicture}[sibling distance=25em,
   every node/.style = {shape=rectangle, rounded corners,
     draw, align=center, color=white!20}]]
-  \node {\Large{what to do?}}
+  \node {\Large{decrease $\mathrm{n_{cal}}$ by}}
+    child { node {decrease the number\\ of sub bins per bin} }
     child { node {increase bin size \\
-    				  $\rightarrow$ decrease $n_{bins}$} }
-    child { node {decrease the number\\ of sub bins per bin} };
+    				  $\rightarrow$ decrease $n_{bins}$} };
 \end{tikzpicture}
 
 %	\includegraphics[width=115mm]{images/}
@@ -248,14 +260,25 @@
 	\includegraphics[width=140mm]{images/best_combination_finder_0}
 }
 
+%\frame
+%{
+%%...................................................................................................
+%\note<1>[]{}
+%%...................................................................................................
+%	\centering		
+%	\frametitle{Best sub bin combinations using 10 sub bins}
+%	\includegraphics[width=130mm]{images/best_combination_finder_10_1}
+%}
+
+
 \frame
 {
 %...................................................................................................
 \note<1>[]{}
 %...................................................................................................
-	\centering		
-	\frametitle{Best sub bin combinations using 10 sub bins}
-	\includegraphics[width=130mm]{images/best_combination_finder_10_1}
+	\frametitle{Str\"omgren \textit{b}}
+	\centering
+	\includegraphics[width=140mm]{images/b_filter}
 }
 
 
@@ -264,12 +287,13 @@
 %...................................................................................................
 \note<1>[]{}
 %...................................................................................................
-	\frametitle{Best combination of 4 sub bins for Str\"omgren b}
+	\frametitle{OODF treatment of filters}
 	\begin{itemize}
-		\item Total line contribution $\sim$15\%
+		\item ODF approach can be generalized to take into account any shape of transmission function
+		\item Achieved by transforming the wavelength grid according to the transmission function
 	\end{itemize}
 	\centering
-	\includegraphics[width=115mm]{images/optimal_stroemgren_1_c_b}
+	\includegraphics[width=130mm]{images/odf_filters}
 }
 
 
@@ -280,7 +304,7 @@
 %...................................................................................................
 	\frametitle{Speedups in the case of Str\"omgren \textit{b}}
 	\begin{itemize}
-		\item Interval length: $\sim$400\si{\angstrom}\\[20pt]
+		\item Interval length (transmission curve > 1\%): $\sim$400\si{\angstrom} \\[20pt]
 	\end{itemize}
 	
 	\centering
@@ -294,11 +318,78 @@
   \node {\large{High resolution: 80 points per \si{\angstrom} $\sim$ 32 000 points}\\}
     child { node {ODF: 12 points per 10\si{\angstrom} $\sim$ 480 points \\
     \alert{\large{speedup 67 times}}} }
-    child { node {OODF: 3 points for the whole bin\si{\angstrom} $\sim$ 3 points \\
-    \alert{\large{speedup $\sim$11 000 times}}} };
+    child { node {OODF: 4 points for the whole bin \\
+    \alert{\large{speedup $\sim$8 000 times}}} };
 \end{tikzpicture}
 
 }
+
+
+
+\frame
+{
+%...................................................................................................
+\note<1>[]{}
+%...................................................................................................
+	\frametitle{MSc project - Introduction}
+    \large{Title: \textbf{Fast Approximate non-LTE Treatment of the Chromosphere}}
+	\begin{itemize}
+	\large{
+		\item The aim of the magnetohydrodynamic group at my institute is  simulating the Sun from the upper part of the convection zone and up 
+		\vspace{1em}
+		%(convection zone, photosphere zone, chromosphere and corona) \\[10pt] 
+		\\
+			\centering 
+	\includegraphics[width=60mm]{images/sun_structure}
+	\url{http://www.phy.cuhk.edu.hk/elearning/Solar_eclipse/Solar_structure.html}
+
+%		\item Corona is very hot, over 10$^6$K. Where does the heat come from? Coronal heating is an unsolved problem. \\[10pt] \pause
+%		\item Chromosphere is dominated by non-LTE effects, a lot of energy loss due to ionization of H and He. \\[10pt] \pause
+%		\item Full non-LTE treatment is time prohibitive, computational cost much larger than the MHD time step.
+
+		%\item To properly treat this environment we must incorporate realistic radiative effects into large magnetohydrodynamic simulations. Cooling rates are currently approximated from large pre-calculated tables. The goal of my project is to calculate cooling rates using realistic radiative effects. I am implementing a new radiation solver into an existing C/C++ code. Starting with a single-core implementation for the 1D case, my goal is to implement MPI to address the full 3D problem. I will ultimately adapt the solver for a large scale MHD simulations on multi-GPU using openACC.
+
+	}
+	\end{itemize}
+%	\centering
+%	\includegraphics[width=115mm]{images/}
+}
+
+%\frame
+%{
+%%...................................................................................................
+%\note<1>[]{}
+%%...................................................................................................
+%	\frametitle{MSc project - fast approximate non-LTE treatment of the chromosphere}
+%	\centering 
+%	\includegraphics[width=90mm]{images/sun_structure}
+%	\url{http://www.phy.cuhk.edu.hk/elearning/Solar_eclipse/Solar_structure.html}
+%}
+
+
+
+\frame
+{
+%...................................................................................................
+\note<1>[]{when MHD started they could not afford any RT calculations, so they just pre-tabulated cooling rates. Now we can slowly afford some approximate treatment}
+%...................................................................................................
+	\frametitle{MSc project - Fast approximate non-LTE treatment of the chromosphere}
+	\large{\textbf{Current solutions:}}
+	\begin{itemize}
+		\item Currently used solution: pre-tabulated cooling rates derived from 1D RADYN radiation-hydrodynamic simulations \pause \alert{$\rightarrow$} difficult to expand to more than a handful of elements \\[10pt] \pause
+	\end{itemize}
+		\large{\textbf{My work:}}
+		\begin{itemize}
+		\item Escape probability methods \pause \alert{$\rightarrow$} problem with going from 1D to 3D \\[5pt] \pause
+		\item Scharmer method: \textit{A new approach to multi-level non-LTE radiative transfer problems, Scharmer's et al (1985)} \\[2pt] 
+		    \begin{itemize}
+		        \item \large{Eddington Barbier approximation + core saturation approximation}
+		    \end{itemize}
+	    \end{itemize}
+}
+
+
+
 
 \frame
 {
@@ -307,18 +398,34 @@
 %...................................................................................................
 	\frametitle{Conclusions}
 	\large{
+	\textbf{First project}
 	\begin{itemize}
-	%\item An efficient  procedure for radiative transfer is timely for new generation of solar and stellar variability models.\\[15pt]
-	\item We developed a novel method for fast spectral synthesis. \\[15pt]
-	\item Found optimal sub bins for different wavelength regimes.\\[15pt]
-    \item Can be tailored for different filters: Strömgren \textit{b} + \textit{y}, Kepler, PLATO  and others.\\[15pt]
-    \item Significant speed up relative to standard  methods by a factor of at least two orders of magnitude.\\[10pt]
+		\item We developed a novel method for fast spectral synthesis. \\%[10pt]
+		\item Found optimal sub bins for different wavelength regimes.\\%[10pt]
+	    \item Can be tailored for different filters: Strömgren \textit{b} + \textit{y}, Kepler, PLATO  and others.\\%[10pt]
+	    \item Significant speed up relative to standard  methods by a factor of at least two orders of magnitude.\\[12pt]
+	\end{itemize}
+	
+	\textbf{Second project}
+	\begin{itemize}
+		\item Escape probabilities: try the 1.5D approach. 
+		\item Scharmer: implement the method into RH 
+		\item Compare both methods above to the pre-tabulated cooling rates.\\%[10pt]
 	\end{itemize}
 	
 	}
-	\pause
-		\centering \alert{\Large{Thank you for your attention!}} \\
-		\includegraphics[width=25mm]{images/qr}
+}
+
+\backupbegin
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            backup slides                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+    \frametitle{Backup slides beyond}
+    \centering
+    \textbf{Here be dragons!}
 }
 
 
@@ -350,3 +457,4 @@
 	\centering
 	\includegraphics[width=115mm]{images/ascending_descending}
 }
+\backupend

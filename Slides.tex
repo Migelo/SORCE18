@@ -32,6 +32,13 @@
 \usepackage{./template/styles/GFZcolors}
 \usepackage{./template/styles/GFZfonts}
 
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
 
 \newcommand{\GFZlogo}{\includegraphics[height=10px, keepaspectratio=true, viewport=0 0 480 326]{template/logos/mpg_logo_bw}}
 \newcommand{\GFZmark}{\includegraphics[height=15px, keepaspectratio=true, viewport=0 0 480 326]{template/logos/mps_logo_bw}}
@@ -42,9 +49,10 @@
 %\setbeameroption{show notes}
 %\setbeameroption{show notes on second screen}
 
-\title[OODF]{OODF: Optimized Opacity Distribution Functions for a New Generation of Solar and Stellar Brightness Variability Models}
-\author[Miha Cernetic]{Miha Cernetic, Alexander I. Shapiro, Veronika Witzke, Natalia A. Krivova, Sami K. Solanki, Rinat V. Tagoirov}
-\date[Aug. 23, '18]{Aug. 23, '18}
+%\title[]{OODF: Optimized Opacity Distribution Functions for a New Generation of Solar and Stellar Brightness Variability Models}
+\title[]{Developing faster and more accurate radiative transfer calculations for solar and stellar applications}
+\author[Miha Cernetic]{Miha Cernetic, Alexander I. Shapiro, Veronika Witzke, Natalia A. Krivova, Sami K. Solanki, Rinat V. Tagirov}
+\date[Feb. 26, '19]{Feb. 26, '19}
 
 \logo{
 \begin{columns}
